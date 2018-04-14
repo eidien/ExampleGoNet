@@ -56,7 +56,10 @@ public class RecargaFragment extends BaseFragment implements View.OnClickListene
         } else if (monto.trim().isEmpty()) {
             editTextMonto.setError("Proporcione el monto");
             return false;
-        } else if (Integer.parseInt(monto)  < 3 && Integer.parseInt(monto) > 100) {
+        } else if (Integer.parseInt(monto) < 3) {
+            editTextMonto.setError("El monto debe de estar entre 3 y 100");
+            return false;
+        }  else if (Integer.parseInt(monto) > 100) {
             editTextMonto.setError("El monto debe de estar entre 3 y 100");
             return false;
         }
