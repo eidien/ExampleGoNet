@@ -1,4 +1,4 @@
-package com.example.adangutierrez.examengonet.presenter;
+package com.example.adangutierrez.examengonet.presenter.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
