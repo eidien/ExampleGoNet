@@ -1,17 +1,28 @@
 apply plugin: 'com.android.application'
+apply plugin: 'realm-android'
 
 android {
-    compileSdkVersion 26
+
+    compileSdkVersion rootProject.ext.androidCompileSdkVersion
+    buildToolsVersion rootProject.ext.androidBuildToolsVersion
+
     defaultConfig {
         applicationId "com.example.adangutierrez.examengonet"
-        minSdkVersion 14
-        targetSdkVersion 26
+        minSdkVersion rootProject.ext.androidMinSdkVersion
+        targetSdkVersion rootProject.ext.androidTargetSdkVersion
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
     }
     buildTypes {
+        debug {
+            debuggable true
+            applicationIdSuffix ".debug"
+            buildConfigField "String", "HOST", '"https://agentemovil.pagatodo.com/"'
+        }
         release {
+            buildConfigField "String", "HOST", '"https://agentemovil.pagatodo.com/"'
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -20,9 +31,21 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    androidTestCompile(parent.ext.testing.espresso, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile parent.ext.testing.junit
+    implementation parent.ext.libraries.multidex
+    implementation parent.ext.libraries.appcompat
+    implementation parent.ext.libraries.design
+    implementation parent.ext.libraries.supportv4
+    implementation parent.ext.libraries.butterknife
+    annotationProcessor parent.ext.libraries.butterknifecompiler
+    implementation parent.ext.libraries.retrofit
+    implementation parent.ext.libraries.gsonconverter
+    implementation parent.ext.libraries.okhttp
+    implementation parent.ext.libraries.cardview
+    implementation parent.ext.libraries.recyclerview
+    implementation parent.ext.libraries.picasso
+    implementation parent.ext.libraries.constraintlayout
 }

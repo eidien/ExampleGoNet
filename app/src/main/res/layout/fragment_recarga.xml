@@ -1,0 +1,76 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="40dp"
+    android:background="@color/background"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.adangutierrez.examengonet.presenter.fragments.RecargaFragment">
+
+    <LinearLayout
+        android:id="@+id/ll_telefono"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:src="@drawable/ic_user"
+            android:layout_margin="5dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <EditText
+            android:id="@+id/et_telefono"
+            android:maxLength="10"
+            android:theme="@style/CustomTextAppearence.TextInputLayout"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_monto"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/img_logo_pass"
+            android:layout_margin="5dp"
+            android:src="@drawable/ic_pass"
+            android:layout_width="18dp"
+            android:layout_height="18dp" />
+
+        <EditText
+            android:id="@+id/et_monto"
+            android:theme="@style/CustomTextAppearence.TextInputLayout"
+            android:maxLength="3"
+            android:inputType="numberDecimal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <TextView
+        android:text="@string/recarga_legend"
+        android:textColor="@color/gray"
+        android:layout_marginTop="40dp"
+        android:textSize="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btn_recargar"
+        android:text="@string/recarga_continuar"
+        android:textColor="@color/white"
+        android:background="@drawable/button_login"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
