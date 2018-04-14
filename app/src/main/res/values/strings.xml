@@ -1,4 +1,8 @@
 <resources>
+
+    <!-- Type -->
+    <string name="type_device">Smartphone</string>
+
     <string name="app_name">ExamenGoNet</string>
     <string name="nothing">""</string>
 
@@ -8,7 +12,17 @@
     <string name="error_user_empty">El campo usuario no puede ser vacio</string>
     <string name="error_pass_empty">El campo password no puede ser vacio</string>
 
+    <!-- Main -->
+    <string name="answer_logout">¿Esta seguro de cerrar sesión?</string>
+    <string name="button_yes">Cerrar sesión</string>
+    <string name="button_no">Cancelar</string>
+
+
     <!-- Menu -->
     <string name="menu_info">Información</string>
+    <string name="menu_logout">Cerrar sesión</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

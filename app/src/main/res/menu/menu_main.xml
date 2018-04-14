@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/action_info"
-        android:icon="@drawable/ic_more_vert"
-        android:title="@string/menu_info"
+        android:id="@+id/action_logout"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/menu_logout"
         android:orderInCategory="1"
         tools:iconTint="@color/white"
-        tools:showAsAction="collapseActionView|ifRoom"/>
+        tools:showAsAction="always"/>
 
 </menu>

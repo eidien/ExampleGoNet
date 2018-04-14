@@ -5,6 +5,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.adangutierrez.examengonet.R;
+import com.example.adangutierrez.examengonet.data.model.Marcas;
 import com.example.adangutierrez.examengonet.data.response.login.ResponseLogin;
 import com.example.adangutierrez.examengonet.domain.interactors.login.LoginInteractorImp;
 import com.example.adangutierrez.examengonet.presenter.activities.MainActivity;
@@ -12,11 +13,18 @@ import com.example.adangutierrez.examengonet.presenter.bases.BaseFragment;
 import com.example.adangutierrez.examengonet.presenter.presenter.login.LoginPresenter;
 import com.example.adangutierrez.examengonet.presenter.presenter.login.LoginPresenterImp;
 import com.example.adangutierrez.examengonet.presenter.presenter.login.LoginView;
+import com.example.adangutierrez.examengonet.presenter.utils.GeneralUtils;
 import com.example.adangutierrez.examengonet.presenter.utils.SharedKeys;
 import com.example.adangutierrez.examengonet.presenter.utils.SharedPreferencesManager;
 
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
 import butterknife.BindView;
 import butterknife.OnClick;
+import io.realm.Realm;
+import io.realm.RealmList;
 
 public class LoginFragment extends BaseFragment implements LoginView {
 
@@ -55,6 +63,26 @@ public class LoginFragment extends BaseFragment implements LoginView {
 
     @Override
     public void navigateToHome(ResponseLogin responseLogin) {
+
+        final List<Marcas> marcasArrayList = new ArrayList<>(GeneralUtils.getDefaultInfo());
+        Realm mRealm = null;
+        try {
+            mRealm = Realm.getDefaultInstance();
+            mRealm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+
+                    RealmList<Marcas> _newsList = new RealmList<>();
+                    _newsList.addAll(marcasArrayList);
+                    realm.insertOrUpdate(_newsList);
+                }
+            });
+        } finally {
+            if (mRealm != null) {
+                mRealm.close();
+            }
+        }
+
         SharedPreferencesManager.setSharedPreferenceAs(SharedKeys.LOGIN, true, true);
         SharedPreferencesManager.setSharedPreferenceAs(SharedKeys.LOGIN_DATA, responseLogin, true);
         Intent intent = new Intent(getActivity(), MainActivity.class);
