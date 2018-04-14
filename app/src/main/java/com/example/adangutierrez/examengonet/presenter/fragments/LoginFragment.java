@@ -18,7 +18,6 @@ import com.example.adangutierrez.examengonet.presenter.utils.SharedKeys;
 import com.example.adangutierrez.examengonet.presenter.utils.SharedPreferencesManager;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import butterknife.BindView;

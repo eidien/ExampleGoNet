@@ -39,6 +39,7 @@ public class MainRecyclerAdapter extends RecyclerView.Adapter<MainViewHolder> {
     @Override
     public void onBindViewHolder(MainViewHolder holder, int position) {
 
+        holder.linearLayoutContainer.setTag(position);
         holder.linearLayoutContainer.setOnClickListener(mListener);
 
         Marcas marcas = result.get(position);
