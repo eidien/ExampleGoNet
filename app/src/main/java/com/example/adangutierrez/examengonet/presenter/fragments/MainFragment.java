@@ -6,7 +6,6 @@ import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.adangutierrez.examengonet.R;
 import com.example.adangutierrez.examengonet.data.model.Marcas;
@@ -15,8 +14,6 @@ import com.example.adangutierrez.examengonet.presenter.adapter.MainRecyclerAdapt
 import com.example.adangutierrez.examengonet.presenter.bases.BaseFragment;
 import com.example.adangutierrez.examengonet.presenter.utils.GeneralUtils;
 import com.example.adangutierrez.examengonet.presenter.utils.GridSpacingItemDecoration;
-
-import java.util.ArrayList;
 
 import butterknife.BindView;
 import io.realm.Realm;

@@ -16,10 +16,11 @@
     <!-- Main -->
     <string name="answer_logout">¿Esta seguro de cerrar sesión?</string>
     <string name="button_yes">Cerrar sesión</string>
-    <string name="button_no">Cancelar</string>
+    <string name="button_no">Cancelarversion_name</string>
 
     <!-- Recarga -->
     <string name="recarga_continuar">Continuar</string>
+    <string name="recarga_legend">VENTA DE 3.0 A 100.0 CON INCREMENTO DE 1.0</string>
 
     <!-- Menu -->
     <string name="menu_info">Información</string>
