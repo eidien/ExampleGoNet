@@ -5,6 +5,8 @@
     <!-- Login -->
     <string name="button_login">Iniciar sesión</string>
     <string name="version_name">V1.0</string>
+    <string name="error_user_empty">El campo usuario no puede ser vacio</string>
+    <string name="error_pass_empty">El campo password no puede ser vacio</string>
 
     <!-- Menu -->
     <string name="menu_info">Información</string>
