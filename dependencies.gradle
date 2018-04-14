@@ -1,0 +1,69 @@
+ext{
+    // Android sdk version
+    androidCompileSdkVersion = 27
+    androidBuildToolsVersion = "27.0.0"
+    androidMinSdkVersion = 21
+    androidTargetSdkVersion = 27
+
+    // version & package
+    supportVersion = '27.0.0'
+    supportPackage = 'com.android.support'
+
+    retrofitVersion = '2.3.0'
+    gsonVersion = '2.3.0'
+    retrofitPackage = 'com.squareup.retrofit2'
+
+    okhttpVersion = '3.8.1'
+    okhttpPackage = 'com.squareup.okhttp3'
+
+    butterknifeVersion = '8.4.0'
+    butterknifePackage = 'com.jakewharton'
+
+    picassoVersion = '2.5.2'
+    picassoPackage = 'com.squareup.picasso'
+
+    constraintlayoutVersion = '1.0.2'
+    constraintlayoutPackage = 'com.android.support.constraint'
+
+    multidexVersion = '1.0.1'
+    multidexPackage = 'com.android.support'
+
+    // testing
+    junitVersion = '4.12'
+    junitPackage = 'junit'
+
+    runnerVersion = '1.0.1'
+    runnerPackage = 'com.android.support.test'
+
+    espressoVersion = '3.0.1'
+    espressoPackage = 'com.android.support.test.espresso'
+
+
+    //Libraries
+    libraries = [
+            design : buildDependency(supportPackage, 'design', supportVersion),
+            appcompat : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            supportv4 : buildDependency(supportPackage, 'support-v4', supportVersion),
+            cardview : buildDependency(supportPackage, 'cardview-v7', supportVersion),
+            recyclerview : buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+            retrofit : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
+            gsonconverter : buildDependency(retrofitPackage, 'converter-gson', gsonVersion),
+            okhttp : buildDependency(okhttpPackage, 'logging-interceptor', okhttpVersion),
+            butterknife : buildDependency(butterknifePackage, 'butterknife', butterknifeVersion),
+            butterknifecompiler : buildDependency(butterknifePackage, 'butterknife-compiler', butterknifeVersion),
+            picasso : buildDependency(picassoPackage, 'picasso', picassoVersion),
+            constraintlayout : buildDependency(constraintlayoutPackage, 'constraint-layout', constraintlayoutVersion),
+            multidex : buildDependency(multidexPackage, 'multidex', multidexVersion)
+    ]
+
+    //Testing
+    testing = [
+            junit : buildDependency(junitPackage, 'junit', junitVersion),
+            runner : buildDependency(runnerPackage, 'runner', runnerVersion),
+            espresso : buildDependency(espressoPackage, 'espresso-core', espressoVersion)
+    ]
+}
+
+static String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}
