@@ -30,7 +30,6 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
     androidTestCompile(parent.ext.testing.espresso, {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

@@ -1,18 +1,24 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.DayNight.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorControlNormal">@color/white</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
     </style>
 
-    <!-- Base application theme. -->
-    <style name="AppTheme.NoActionBar" parent="AppTheme">
-        <!-- Customize your theme here. -->
-        <item name="windowNoTitle">true</item>
-        <item name="android:windowActionBar">false</item>
+    <style name="CustomTextAppearence.TextInputLayout.Hidden" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="CustomTextAppearence.TextInputLayout" parent="Theme.AppCompat">
+        <item name="android:textColor">@color/white</item>
+        <item name="colorControlNormal">@color/til_backgorund</item>
+        <item name="colorControlActivated">@color/white</item>
     </style>
 
 </resources>

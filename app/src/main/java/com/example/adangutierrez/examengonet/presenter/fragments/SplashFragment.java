@@ -27,12 +27,7 @@ public class SplashFragment extends BaseFragment {
 
             public void onFinish() {
                 boolean isLogin = SharedPreferencesManager.getSharedPreferenceAs(boolean.class, SharedKeys.LOGIN, false);
-                Intent intent = new Intent();
-                if (isLogin) {
-                    intent.setClass(getActivity(), MainActivity.class);
-                } else {
-                    intent.setClass(getActivity(), LoginActivity.class);
-                }
+                Intent intent = new Intent(getActivity(), isLogin ? MainActivity.class : LoginActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 getActivity().startActivity(intent);
             }
