@@ -1,5 +1,7 @@
 package com.example.adangutierrez.examengonet.data.model;
 
+import java.io.Serializable;
+
 import io.realm.RealmObject;
 import io.realm.annotations.PrimaryKey;
 
@@ -7,7 +9,7 @@ import io.realm.annotations.PrimaryKey;
  * Created by adan.gutierrez on 14/04/18.
  */
 
-public class Marcas extends RealmObject {
+public class Marcas extends RealmObject implements Serializable {
 
     @PrimaryKey
     public int id;
