@@ -32,4 +32,12 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected abstract void onInitializeUI();
+
+    public void showProgressBar() {
+        if (getActivity() != null) ((BaseActivity) getActivity()).showProgressBar();
+    }
+
+    public void dismissProgressBar() {
+        if (getActivity() != null) ((BaseActivity) getActivity()).dismissProgressBar();
+    }
 }
