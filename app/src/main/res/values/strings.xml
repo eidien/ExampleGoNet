@@ -16,7 +16,7 @@
     <!-- Main -->
     <string name="answer_logout">¿Esta seguro de cerrar sesión?</string>
     <string name="button_yes">Cerrar sesión</string>
-    <string name="button_no">Cancelarversion_name</string>
+    <string name="button_no">Cancelar</string>
 
     <!-- Recarga -->
     <string name="recarga_continuar">Continuar</string>
